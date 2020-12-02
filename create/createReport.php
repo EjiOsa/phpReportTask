@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
         $_SESSION['message_error'] = "報告書作成はログインが必要です。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReport/management/loginForm');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm');
         exit();
     }
 
@@ -13,6 +13,7 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
+<h2><?php if((isset($_SESSION['message_error']))) echo $_SESSION['message_error']; ?></h2>
     <nav aria-label="breadcrumb" class="row d-flex align-items-start">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active font-weight-bold text-primary" aria-current="page">Create</li>
@@ -46,7 +47,7 @@
         <button id="confirm-btn" class="btn btn-outline-primary btn-lg float-right" name="confirm" <?php if(!isset($_SESSION["confirm"])){echo 'disabled="true"';} ?> >確認</button>
     </form>
     <input id="savedata" type="hidden" name="max_file_size" value="" />
-    <form action="/phpReport" method="GET">
+    <form action="/phpReportTask" method="GET">
         <button class="btn btn-outline-primary btn-lg">戻る</button>
     </form>
     </div>

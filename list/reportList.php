@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
         $_SESSION["message_error"] = "報告書一覧の閲覧にはログインが必要です。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReport/management/loginForm');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm');
         exit();
     }
     // PDO用の定数と変数宣言

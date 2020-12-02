@@ -1,6 +1,9 @@
 <?php
     session_start();
-    $errorMassage = $_SESSION["message_error"];
+    $errorMassage = "";
+    if(isset($_SESSION["message_error"])){
+        $errorMassage = $_SESSION["message_error"];
+    }
 
     // 以下、共通パーツ定数
     define("TITLE" ,"Login Form");

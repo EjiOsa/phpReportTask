@@ -1,6 +1,9 @@
 <?php
     session_start();
-    $errorMassage = $_SESSION["message_error"];
+    $errorMassage = "";
+    if(isset($_SESSION["message_error"])){
+        $errorMassage = $_SESSION["message_error"];
+    }
     $email = $_POST['email'];
     define('DB_DSN', 'mysql:dbname=report_project;host=localhost');
     define('DB_USER', 'root');
@@ -24,10 +27,10 @@
         $_SESSION['id'] = $user['id'];
         $_SESSION['name'] = $user['name'];
         $msg = 'ログインしました。';
-        $link = '<a href="/phpReport">TOPへ</a>';
+        $link = '<a href="/phpReportTask">TOPへ</a>';
     } else {
         $msg = 'メールアドレスもしくはパスワードが間違っています。';
-        $link = '<a href="/phpReport/management/loginForm">戻る</a>';
+        $link = '<a href="/phpReportTask/management/loginForm">戻る</a>';
     }
     // 以下、共通パーツ定数
     define("TITLE" ,"Login");
@@ -35,7 +38,6 @@
     ?>
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
-
 
 <h1><?php echo $msg; ?></h1>
 <?php echo $link; ?>

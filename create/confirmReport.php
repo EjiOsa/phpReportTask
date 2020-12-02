@@ -4,7 +4,7 @@
     if((!isset($_POST['title']) || !isset($_POST['body']))
         || (!($_POST['title']) || !($_POST['body'])) ){
         $_SESSION['message_error'] = "報告書作成画面から開始してください。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReport/create/createReport');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport');
         exit();
     }
     $_SESSION['title'] = $_POST['title'];
@@ -43,6 +43,7 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
+<h2><?php if((isset($_SESSION['message_error']))) echo $_SESSION['message_error']; ?></h2>
 <div class="container">
         <nav aria-label="breadcrumb" class="row d-flex align-items-start">
             <ol class="breadcrumb">

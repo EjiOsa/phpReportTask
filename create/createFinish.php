@@ -9,7 +9,7 @@
     session_start();
     if(!isset($_SESSION['title']) || !isset($_SESSION['body'])){
         $_SESSION['message_error'] = "報告書作成画面から開始してください。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReport/create/createReport');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport');
         exit();
     }
     $title = $_SESSION["title"];
@@ -80,6 +80,7 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
+<h2><?php echo $errorMassage; ?></h2>
     <div class="container">
         <nav aria-label="breadcrumb" class="row d-flex align-items-start">
             <ol class="breadcrumb">
@@ -102,7 +103,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <a class="links btn btn-outline-primary btn-lg float-center" href="/phpReport">TOPへ戻る</a>
+            <a class="links btn btn-outline-primary btn-lg float-center" href="/phpReportTask">TOPへ戻る</a>
         </div>
     </div>
 </body>

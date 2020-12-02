@@ -11,7 +11,7 @@
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
 <p>ログアウトしました。</p>
-<a href="/phpReport">TOPへ</a>
+<a href="/phpReportTask">TOPへ</a>
 
 </body>
 </html>
