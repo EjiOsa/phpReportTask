@@ -29,7 +29,7 @@
         }
     } else {
         $msg = 'メールアドレスもしくはパスワードが間違っています。';
-        $link = '<a href="/phpReportTask/management/loginForm">戻る</a>';
+        $link = '<a href="/phpReportTask/management/loginForm.php">戻る</a>';
     }
     // 以下、共通パーツ定数
     define("TITLE" ,"Login");

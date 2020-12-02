@@ -55,13 +55,13 @@
                 </div>
             </div>
                 <div class="m-4 clearfix float-right">
-                    <a href="/phpReportTask/list/reportList" role="button" class="links btn btn-outline-info">クリア</a>
+                    <a href="/phpReportTask/list/reportList.php" role="button" class="links btn btn-outline-info">クリア</a>
                 </div>
                 <div class="my-4 clearfix float-right">
                     <button class="btn btn-outline-info js-list-search" name="narrow"> 絞り込み </button>
                 </div>
 
-        <form action="reportDetail" method="GET">
+        <form action="reportDetail.php" method="GET">
         <table class="table" style="table-layout:fixed;">
             <thead class="thead-light">
                 <th class="back1 " scope="col" style="white-space:nowrap; width:20%;">

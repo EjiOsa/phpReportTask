@@ -26,7 +26,7 @@
                         <?php if (!isset($_SESSION['id'])) :?>
                             <li class="nav-item">
                                 <div class="col">
-                                    <form action="./management/loginForm" method="GET">
+                                    <form action="./management/loginForm.php" method="GET">
                                     <button class="btn btn-outline-success btn-lg">Login</button>
                                     </form>
                                 </div>
@@ -36,7 +36,7 @@
                                 <div class="col">
                                     <?php echo $_SESSION['name'] ?>
                                 </div>
-                                <a class="nav-link" href="<?php echo $path.'/management/logout'; ?>">ログアウト</a>
+                                <a class="nav-link" href="<?php echo $path.'/management/logout.php'; ?>">ログアウト</a>
                             </li>
                         <?php endif ;?>
                     <?php endif ;?>

@@ -15,7 +15,7 @@
 
 <h1>ログインページ</h1>
 <h2><?php echo $errorMassage; ?></h2>
-<form action="login" method="post">
+<form action="login.php" method="post">
 <div>
     <label>メールアドレス：<label>
     <input type="text" name="email" required>

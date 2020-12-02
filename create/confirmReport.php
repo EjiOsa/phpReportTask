@@ -93,7 +93,7 @@
                 <p class="text-justify font-weight-bold text-center h5"><?php echo $_SESSION['name'] ?></p>
             </div>
         </div>
-                <form action="createFinish" method="POST">
+                <form action="createFinish.php" method="POST">
                     <button class="btn btn-outline-primary btn-lg float-right" name="insert"> 登録 </button>
                 </form>
                 <div>

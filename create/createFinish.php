@@ -103,7 +103,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <a class="links btn btn-outline-primary btn-lg float-center" href="/phpReportTask">TOPへ戻る</a>
+            <a class="links btn btn-outline-primary btn-lg float-center" href="/phpReportTask.php">TOPへ戻る</a>
         </div>
     </div>
 </body>

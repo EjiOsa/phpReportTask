@@ -24,12 +24,12 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col">
-                <form action="create/createReport" method="GET">
+                <form action="create/createReport.php" method="GET">
                     <button class="btn btn-outline-success btn-lg float-right"> Create Report </button>
                 </form>
             </div>
             <div class="col">
-                <form action="list/reportList" method="GET">
+                <form action="list/reportList.php" method="GET">
                     <button class="btn btn-outline-success btn-lg">Report List</button>
                 </form>
             </div>
