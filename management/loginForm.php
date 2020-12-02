@@ -5,9 +5,9 @@
         $errorMassage = $_SESSION["login_message"];
     }
 
-    // 以下、共通パーツ定数
-    define("TITLE" ,"Login Form");
-    define("NOT_SHOW_AUTH" ,"Login Form");
+    // 以下、header内で使用する定数
+    const TITLE = "Login Form";
+    const NOT_SHOW_AUTH = "Login Form";
     ?>
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>

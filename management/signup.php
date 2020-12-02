@@ -1,7 +1,7 @@
 <?php
 // 以下、共通パーツ定数
-    define("TITLE" ,"SignUp");
-    define("NOT_SHOW_AUTH" ,"SignUp");
+    const TITLE = "SignUp";
+    const NOT_SHOW_AUTH = "SignUp";
     ?>
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>

@@ -5,13 +5,9 @@
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm.php');
         exit();
     }
-
     $id = $_GET["detail"];
-    // PDO用の定数と変数宣言
-    define('DB_DSN', 'mysql:dbname=report_project;host=localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'root');
-    $options = array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET 'utf8'");
+
+    include(dirname(__FILE__).'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定
@@ -38,9 +34,9 @@
     // PDO開放
     $dbh = null;
 
-    // 以下、共通パーツ定数
-    define("TITLE" ,"Report Detail");
-    define("NOT_SHOW_AUTH" ,"Detail");
+    // 以下、header内で使用する定数
+    const TITLE = "Report Detail";
+    const NOT_SHOW_AUTH = "Detail";
     $path = "..";
 ?>
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>

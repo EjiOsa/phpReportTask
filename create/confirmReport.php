@@ -38,7 +38,7 @@
     }
     
     // 以下、共通パーツ定数
-    define("TITLE" ,"Confirm Report");
+    const TITLE = "Confirm Report";
     $path = "..";
     ?>
 

@@ -7,7 +7,7 @@
         unset($_SESSION["login_message"]);
     }
     // 以下、共通パーツ定数
-    define("TITLE" ,"Report TOP");
+    const TITLE = "Report TOP";
     $path = ".";
 ?>
 <?php include(dirname(__FILE__).'/assets/_inc/header.php'); ?>

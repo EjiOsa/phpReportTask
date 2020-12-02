@@ -10,8 +10,8 @@
         exit();
     }
 
-    // 以下、共通パーツ定数
-    define("TITLE" ,"Create Report");
+    // 以下、header内で使用する定数
+    const TITLE = "Create Report";
     $path = "..";
     ?>
 
