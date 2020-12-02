@@ -4,7 +4,7 @@
     if((!isset($_POST['title']) || !isset($_POST['body']))
         || (!($_POST['title']) || !($_POST['body'])) ){
         $_SESSION['login_message'] = "報告書作成画面から開始してください。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
         exit();
     }
     $_SESSION['title'] = $_POST['title'];

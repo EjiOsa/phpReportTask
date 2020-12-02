@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
         $_SESSION["login_message"] = "報告書詳細の閲覧にはログインが必要です。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm.php');
         exit();
     }
 

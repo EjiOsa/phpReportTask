@@ -9,7 +9,7 @@
     session_start();
     if(!isset($_SESSION['title']) || !isset($_SESSION['body'])){
         $_SESSION['login_message'] = "報告書作成画面から開始してください。<br>";
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport');
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
         exit();
     }
     $title = $_SESSION["title"];
