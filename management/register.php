@@ -7,9 +7,9 @@
     date_default_timezone_set('Asia/Tokyo');
     $date = date('Y-m-d H:i:s');
 
-    define('DB_DSN', 'mysql:dbname=report_project;host=localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'root');
+    define('DB_DSN', 'mysql:dbname=mt-compass_guest;host=mt-compass.sakura.ne.jp');
+    define('DB_USER', 'mt-compass');
+    define('DB_PASSWORD', 'wWgWSCnW2-Ue');
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET 'utf8'");
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
