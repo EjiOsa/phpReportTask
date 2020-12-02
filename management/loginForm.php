@@ -1,8 +1,8 @@
 <?php
     session_start();
     $errorMassage = "";
-    if(isset($_SESSION["message_error"])){
-        $errorMassage = $_SESSION["message_error"];
+    if(isset($_SESSION["login_message"])){
+        $errorMassage = $_SESSION["login_message"];
     }
 
     // 以下、共通パーツ定数
@@ -15,7 +15,7 @@
 
 <h1>ログインページ</h1>
 <h2><?php echo $errorMassage; ?></h2>
-<form action="login.php" method="post">
+<form action="login" method="post">
 <div>
     <label>メールアドレス：<label>
     <input type="text" name="email" required>

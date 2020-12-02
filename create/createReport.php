@@ -1,7 +1,11 @@
 <?php
     session_start();
+    $errorMassage = "";
+    if(isset($_SESSION["login_message"])){
+        $errorMassage = $_SESSION["login_message"];
+    }
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
-        $_SESSION['message_error'] = "報告書作成はログインが必要です。<br>";
+        $_SESSION['login_message'] = "報告書作成はログインが必要です。<br>";
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm');
         exit();
     }
@@ -13,7 +17,7 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<h2><?php if((isset($_SESSION['message_error']))) echo $_SESSION['message_error']; ?></h2>
+<h2><?php echo $errorMassage; ?></h2>
     <nav aria-label="breadcrumb" class="row d-flex align-items-start">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active font-weight-bold text-primary" aria-current="page">Create</li>

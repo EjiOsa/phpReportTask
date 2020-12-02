@@ -3,7 +3,9 @@
     if(isset($_SESSION["confirm"])){
         unset($_SESSION["confirm"]);
     }
-    
+    if(isset($_SESSION["login_message"])){
+        unset($_SESSION["login_message"]);
+    }
     // 以下、共通パーツ定数
     define("TITLE" ,"Report TOP");
     $path = ".";

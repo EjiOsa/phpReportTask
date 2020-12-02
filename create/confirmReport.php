@@ -3,7 +3,7 @@
     $_SESSION['confirm'] = true;
     if((!isset($_POST['title']) || !isset($_POST['body']))
         || (!($_POST['title']) || !($_POST['body'])) ){
-        $_SESSION['message_error'] = "報告書作成画面から開始してください。<br>";
+        $_SESSION['login_message'] = "報告書作成画面から開始してください。<br>";
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport');
         exit();
     }
@@ -12,6 +12,7 @@
     $uploaded = false;
     // セッション削除(ブラウザバック対応)
     unset($_SESSION["attachments"]);
+    unset($_SESSION["login_message"]);
 
     if(isset($_FILES["attachment"]["name"])){ //処理的に正しくない。
         for($i = 0; $i < count($_FILES["attachment"]["name"]); $i++ ){
@@ -43,7 +44,6 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<h2><?php if((isset($_SESSION['message_error']))) echo $_SESSION['message_error']; ?></h2>
 <div class="container">
         <nav aria-label="breadcrumb" class="row d-flex align-items-start">
             <ol class="breadcrumb">

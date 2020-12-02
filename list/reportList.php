@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
-        $_SESSION["message_error"] = "報告書一覧の閲覧にはログインが必要です。<br>";
+        $_SESSION["login_message"] = "報告書一覧の閲覧にはログインが必要です。<br>";
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm');
         exit();
     }
@@ -55,7 +55,7 @@
                 </div>
             </div>
                 <div class="m-4 clearfix float-right">
-                    <a href="/phpReport/list/reportList" role="button" class="links btn btn-outline-info">クリア</a>
+                    <a href="/phpReportTask/list/reportList" role="button" class="links btn btn-outline-info">クリア</a>
                 </div>
                 <div class="my-4 clearfix float-right">
                     <button class="btn btn-outline-info js-list-search" name="narrow"> 絞り込み </button>
@@ -113,7 +113,7 @@
         </table>
         </form>
         <div class="">
-            <a href="/phpReport" role="button" class="links btn btn-outline-info btn-lg">TOPへ</a>
+            <a href="/phpReportTask" role="button" class="links btn btn-outline-info btn-lg">TOPへ</a>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

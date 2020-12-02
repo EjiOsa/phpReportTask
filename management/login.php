@@ -1,9 +1,5 @@
 <?php
     session_start();
-    $errorMassage = "";
-    if(isset($_SESSION["message_error"])){
-        $errorMassage = $_SESSION["message_error"];
-    }
     $email = $_POST['email'];
     define('DB_DSN', 'mysql:dbname=report_project;host=localhost');
     define('DB_USER', 'root');
@@ -28,6 +24,9 @@
         $_SESSION['name'] = $user['name'];
         $msg = 'ログインしました。';
         $link = '<a href="/phpReportTask">TOPへ</a>';
+        if(isset($_SESSION["login_message"])){
+            unset($_SESSION["login_message"]);
+        }
     } else {
         $msg = 'メールアドレスもしくはパスワードが間違っています。';
         $link = '<a href="/phpReportTask/management/loginForm">戻る</a>';
