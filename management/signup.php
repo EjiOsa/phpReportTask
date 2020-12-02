@@ -7,7 +7,7 @@
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
 <h1>新規会員登録</h1>
-<form action="register" method="post">
+<form action="register.php" method="post">
 <div>
     <label>名前：<label>
     <input type="text" name="name" required>
