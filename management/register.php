@@ -18,7 +18,7 @@
         $user = $confirmUserStmt->fetch();
         if ($user['mail'] === $mail) {
             $msg = '同じメールアドレスが存在します。';
-            $link = '<a href="signup">戻る</a>';
+            $link = '<a href="signup.php">戻る</a>';
         } else {
             //登録されていなければinsert 
             $userInsertSql = "INSERT INTO users(
@@ -31,7 +31,7 @@
             $userInsertStmt->bindValue(':password', $pass);
             $userInsertStmt->execute();
             $msg = '会員登録が完了しました';
-            $link = '<a href="login">ログインページ</a>';
+            $link = '<a href="login.php">ログインページ</a>';
         }
     } catch (PDOException $e) {
         $msg = $e->getMessage();
@@ -44,8 +44,10 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<h1><?php echo $msg; ?></h1><!--メッセージの出力-->
-<?php echo $link; ?>
-
-</body>
+            <div class="center-login">
+                <h1><?php echo $msg; ?></h1>
+                <?php echo $link; ?>
+            </div>
+        </div>
+    </body>
 </html>

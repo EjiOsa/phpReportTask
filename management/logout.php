@@ -10,8 +10,10 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<p>ログアウトしました。</p>
-<a href="/phpReportTask">TOPへ</a>
-
-</body>
+            <div class="center-login">
+                <h1>ログアウトしました。</h1>
+                <a href="/phpReportTask">TOPへ</a>
+            </div>
+        </div>
+    </body>
 </html>

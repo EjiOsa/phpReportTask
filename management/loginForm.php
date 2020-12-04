@@ -13,18 +13,28 @@
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
 
-<h1>ログインページ</h1>
-<h2><?php echo $errorMassage; ?></h2>
-<form action="login.php" method="post">
-<div>
-    <label>メールアドレス：<label>
-    <input type="text" name="email" required>
-</div>
-<div>
-    <label>パスワード：<label>
-    <input type="password" name="password" required>
-</div>
-<input type="submit" value="ログイン">
-</form>
-</body>
+            <div class="center-login">
+                <section class="">
+                    <h1>ログイン</h1>
+                    <h3><?php echo $errorMassage; ?></h3>
+                </section>
+
+                <section class="manage-form">
+                    <form action="login.php" method="post">
+                        <div class="manage-input">
+                            <label>メールアドレス：<label>
+                            <input type="text" name="email" size="28" required>
+                        </div>
+                        <div class="manage-input">
+                            <label>パスワード：<label>
+                            <input type="password" name="password" required>
+                        </div>
+                        <div class="manage-btn">
+                            <button>ログイン</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </body>
 </html>

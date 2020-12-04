@@ -6,21 +6,31 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<h1>新規会員登録</h1>
-<form action="register.php" method="post">
-<div>
-    <label>名前：<label>
-    <input type="text" name="name" required>
-</div>
-<div>
-    <label>メールアドレス：<label>
-    <input type="text" name="email" required>
-</div>
-<div>
-    <label>パスワード：<label>
-    <input type="password" name="pass" required>
-</div>
-<input type="submit" value="新規登録">
-</form>
-</body>
+            <div class="center-login">
+                <section class="">
+                    <h1>新規会員登録</h1>
+                </section>
+
+                <section class="manage-form">
+                    <form action="register.php" method="post">
+                        <div class="manage-input">
+                            <label>名前：<label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="manage-input">
+                            <label>メールアドレス：<label>
+                            <input type="text" name="email" size="28" required>
+                        </div>
+                        <div class="manage-input">
+                            <label>パスワード：<label>
+                            <input type="password" name="pass" size="25" required>
+                        </div>
+                        <div class="manage-btn">
+                            <button>新規登録</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </body>
 </html>

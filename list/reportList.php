@@ -30,64 +30,67 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<div class="container">
-        <div class="row">
-            <h1 class="display-5 text-secondary font-weight-lighter">
-                Report List
-            </h1>
-        </div>
+        <section>
+            <div class="">
+                <h1 class="">
+                    Report List
+                </h1>
+            </div>
+        </section>
 
-        <div class="row font-weight-bold h5">
-            絞り込み機能<br>
-        </div>
+        <section>
+            <div class="">
+                絞り込み機能<br>
+            </div>
 
-            <div class="form-row">
-                <div class="form-group col-4">
+            <div class="">
+                <div class="">
                     <label class="">報告書タイトル:</label>
-                    <input id="search-title-input" class="form-control " name="title" type="text" placeholder="タイトル検索文言"/>
+                    <input id="search-title-input" class="" name="title" type="text" placeholder="タイトル検索文言"/>
                 </div>
-                <div class="form-group col-4">
+                <div class="">
                     <label class="">報告書内容:</label>
-                    <input id="search-body-input" class="form-control" name="body" type="text" placeholder="本文検索文言"/>
+                    <input id="search-body-input" class="" name="body" type="text" placeholder="本文検索文言"/>
                 </div>
             </div>
-                <div class="m-4 clearfix float-right">
-                    <a href="/phpReportTask/list/reportList.php" role="button" class="links btn btn-outline-info">クリア</a>
+                <div class="">
+                    <a href="/phpReportTask/list/reportList.php" role="button" class="">クリア</a>
                 </div>
-                <div class="my-4 clearfix float-right">
-                    <button class="btn btn-outline-info js-list-search" name="narrow"> 絞り込み </button>
+                <div class="">
+                    <button id="js-list-search" name="narrow"> 絞り込み </button>
                 </div>
+        </section>
 
-        <form action="reportDetail.php" method="GET">
-        <table class="table" style="table-layout:fixed;">
-            <thead class="thead-light">
-                <th class="back1 " scope="col" style="white-space:nowrap; width:20%;">
-                    報告書タイトル
-                    <button id="sort-title-id" data-id="title" name="sortTitle" class="btn btn-outline-success js-list-sort" data-value="ASC" type="button">ソート</button>
-                </th>
-                <th style="width:37%;">
-                    報告書
-                    <button id="sort-body-id" data-id="body" name="sortBody" class="btn btn-outline-success js-list-sort" data-value="ASC" type="button">ソート</button>
-                </th>
-                <th class="back1 " scope="col" style="white-space:nowrap;  width:15%;">
-                    報告書作成者
-                    <button id="sort-user_name-id" data-id="user_name" name="sortName" class="btn btn-outline-success js-list-sort" data-value="ASC" type="button">ソート</button>
-                </th>
-                <th style="width:14%;">
-                    作成日時
-                    <button id="sort-created_at-id" data-id="created_at" name="sortDate" class="btn btn-outline-success js-list-sort" data-value="ASC" type="button">ソート</button>
-                </th>
-                <th style="width:6%;" class="text-center">添付</th>
-                <th style="width:8%;"></th>
-            </thead>
-            <tbody id="report-list">
-                <?php foreach($selectReportResult as $report) :?>
-                    
+        <section>
+            <form action="reportDetail.php" method="GET">
+                <table class="" style="table-layout:fixed;">
+                    <thead class="">
+                        <th class="" scope="col" style="white-space:nowrap; width:20%;">
+                            報告書タイトル
+                            <button id="sort-title-id" data-id="title" name="sortTitle" class="js-list-sort" data-value="ASC" type="button">ソート</button>
+                        </th>
+                        <th style="width:37%;">
+                            報告書
+                            <button id="sort-body-id" data-id="body" name="sortBody" class="js-list-sort" data-value="ASC" type="button">ソート</button>
+                        </th>
+                        <th class="back1 " scope="col" style="white-space:nowrap;  width:15%;">
+                            報告書作成者
+                            <button id="sort-user_name-id" data-id="user_name" name="sortName" class="js-list-sort" data-value="ASC" type="button">ソート</button>
+                        </th>
+                        <th style="width:14%;">
+                            作成日時
+                            <button id="sort-created_at-id" data-id="created_at" name="sortDate" class="js-list-sort" data-value="ASC" type="button">ソート</button>
+                        </th>
+                        <th style="width:6%;" class="">添付</th>
+                        <th style="width:8%;"></th>
+                    </thead>
+                    <tbody id="report-list">
+                        <?php foreach($selectReportResult as $report) :?>
                         <tr>
                             <td><?php echo $report['title'] ?></td>
                             <td><?php if(mb_strlen($report['body']) > 100) { 
                                             $body = mb_substr($report['body'],0,100);
-                                            echo nl2br($body. '･･･');
+                                            echo nl2br($body. '...');
                                         } else {
                                             echo $report['body'];
                                         } ?></td>
@@ -96,23 +99,25 @@
                             <td>
                                 <?php if($report['attachment_flg']): ?>
                                     あり
-                                    <p style="color: gray; font-size: 20px;" class="text-center">
-                                        <i class="far fa-file"></i>
+                                    <p class="">
+                                        <i class=""></i>
                                     </p>
                                 <?php endif;?> 
                             </td>
                             <td>
-                                <button name="detail" class="btn btn-outline-success" formtarget="_blank" value="<?php echo $report['id']?>"> 詳細 </button></td>
+                                <button name="detail" class="" formtarget="_blank" value="<?php echo $report['id']?>"> 詳細 </button></td>
                         </tr>
-                    
-                <?php endforeach;?>
-            </tbody>
-        </table>
-        </form>
-        <div class="">
-            <a href="/phpReportTask" role="button" class="links btn btn-outline-info btn-lg">TOPへ</a>
+                        <?php endforeach;?>
+                    </tbody>
+                </table>
+            </form>
+        </section>
+        <section>
+            <div class="">
+                <a href="/phpReportTask" role="button" class="">TOPへ</a>
+            </div>
+        </section>
         </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(function () {
@@ -121,7 +126,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        let jsListSearch = $('.js-list-search');
+        let jsListSearch = $('#js-list-search');
         let searchTitle;
         let searchBody;
         jsListSearch.on('click', function () {
@@ -144,11 +149,11 @@
                         str += '<tr><td>'
                             + data[i].title 
                             + '</td><td>'
-                            + data[i].body
+                            + omittedContent(data[i].body)
                             + '</td><td>'
                             + data[i].user_name
                             + '</td><td>'
-                            + data[i].created_at
+                            + data[i].created_at.replace(/-/g,'/').slice(0, -3)
                             + '</td><td>';
                         if(data[i].attachment_flg == 1){
                             str += 'あり<p style="color: gray; font-size: 20px;" class="text-center"><i class="far fa-file"></i></p>';
@@ -204,11 +209,11 @@
                         str += '<tr><td>'
                             + data[i].title 
                             + '</td><td>'
-                            + data[i].body
+                            + omittedContent(data[i].body)
                             + '</td><td>'
                             + data[i].user_name
                             + '</td><td>'
-                            + data[i].created_at
+                            + data[i].created_at.replace(/-/g,'/').slice(0, -3)
                             + '</td><td>';
                         if(data[i].attachment_flg == 1){
                             str += 'あり<p style="color: gray; font-size: 20px;" class="text-center"><i class="far fa-file"></i></p>';
@@ -233,6 +238,14 @@
                 console.log(xhr);
             });
         });
+        function omittedContent(string) {
+            // 絞り込みとソートはjsで最大文字列調整
+            const MAX_LENGTH = 100;
+            if (string.length > MAX_LENGTH) {
+                return string.substr(0, MAX_LENGTH) + '...';
+            }
+            return string;
+        }
     });
     </script>
 </body>

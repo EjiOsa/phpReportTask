@@ -11,28 +11,26 @@
     $path = ".";
 ?>
 <?php include(dirname(__FILE__).'/assets/_inc/header.php'); ?>
-    <div class="container">
-        <div class="row mt-5"><h1 class="display-5"></h1></div>
-        <div class="row mt-5"><h1 class="display-5"></h1></div>
-        <div class="row mt-5"><h1 class="display-5"></h1></div>
 
-        <div class="row justify-content-center mt-5">
-            <h1 class="display-4 text-secondary font-weight-lighter">
-                Report Create&View TOP
-            </h1>
-        </div>
+        <div class="center">
+            <section class="">
+                <h1 class="index">
+                    Report Create&View TOP
+                </h1>
+            </section>
 
-        <div class="row justify-content-center mt-5">
-            <div class="col">
-                <form action="create/createReport.php" method="GET">
-                    <button class="btn btn-outline-success btn-lg float-right"> Create Report </button>
-                </form>
-            </div>
-            <div class="col">
-                <form action="list/reportList.php" method="GET">
-                    <button class="btn btn-outline-success btn-lg">Report List</button>
-                </form>
-            </div>
+            <section class="top-btn-flex">
+                <div class="create-report">
+                    <form action="create/createReport.php" method="GET">
+                        <button class=""> Create Report </button>
+                    </form>
+                </div>
+                <div class="report-list">
+                    <form action="list/reportList.php" method="GET">
+                        <button class="">Report List</button>
+                    </form>
+                </div>
+            </section>
         </div>
     </div>
 </body>

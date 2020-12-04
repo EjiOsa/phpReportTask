@@ -25,7 +25,7 @@
             }
         } else {
             $msg = 'メールアドレスもしくはパスワードが間違っています。';
-            $link = '<a href="/phpReportTask/management/loginForm.php">戻る</a>';
+            $link = '<a href="/phpReportTask/management/loginForm.php">ログインへ戻る</a>';
         }
     } catch (PDOException $e) {
         $msg = $e->getMessage();
@@ -38,7 +38,10 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-<h1><?php echo $msg; ?></h1>
-<?php echo $link; ?>
-</body>
+            <div class="center-login">
+                <h1><?php echo $msg; ?></h1>
+                <?php echo $link; ?>
+            </div>
+        </div>
+    </body>
 </html>
