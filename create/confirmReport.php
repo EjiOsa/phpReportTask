@@ -44,66 +44,73 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-        <section>
-            <div class="">
-                <h1 class="">
+            <section>
+                <h1>
                     Confirm Report
                 </h1>
-            </div>
-            <nav aria-label="breadcrumb" class="">
-                <ol class="">
-                    <li class="" aria-current="page">Create</li>
-                    <li class="" aria-current="page">Confirm</li>
-                    <li class="" aria-current="page">Finish</li>
-                </ol>
-            </nav>
-        </section>
+                <nav aria-label="breadcrumb">
+                    <nl class="breadcrumb">
+                        <li class="breadcrumb-item">Create</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item-current">Confirm</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item">Finish</li>
+                    </nl>
+                </nav>
+            </section>
 
-        <section>
-            <!-- 投稿確認エリア -->
-            <h2 class="">報告書</h2>
-            <div class=""><h1 class=""></h1></div>
-            <div class="">
-                <div class=''>
-                    <label class="">報告書タイトル:</label>
-                    <p class=""><?php echo $_SESSION['title'] ?></p>
-                </div>
-            
-                <hr class="">
-                <div class="">
-                    <label class="">報告書内容:</label>
-                    <p class=""><?php echo nl2br($_SESSION['body']) ?></p>
-                </div>
-            
-                <hr class="">
-            
-                <?php if($uploaded) : ?>
-                    <?php for($i = 0; $i < count($_FILES["attachment"]["name"]); $i++ ) :?>
-                        <div class="">
-                            <div class="">ファイル名：<?php echo $_FILES["attachment"]["name"][$i] ?></div>
-                            <a class="" href="<?php echo '../storage/attachment/tmp/'.$_FILES["attachment"]["newName"][$i] ?>" target="_blank">アップロードファイルを表示</a>
-                            <button class="js-attachment-delete" name="delete" value="<?php echo $_FILES["attachment"]["newName"][$i] ?>"> <?php echo $_FILES["attachment"]["name"][$i] ?>を削除</button>
+            <section class="center">
+                <h2 class="margin-btm-10">報告書</h2>
+            </section>
+
+            <section><!-- 投稿確認エリア -->
+                <div class="center">
+                    <div class="confirm">
+                        <div class="create">
+                            <label>報告書タイトル:</label>
+                            <p class="margin-left-20 confirm-title"><?php echo $_SESSION['title'] ?></p>
                         </div>
-                        <br>
-                    <?php endfor; ?>
-                <?php endif; ?>
-                <br>
                     
-                <div class="">
-                    <div class=""></div>
-                    <label class="">報告者:</label>
-                    <p class=""><?php echo $_SESSION['name'] ?></p>
-                </div>
-            </div>
-                    <form action="createFinish.php" method="POST">
-                        <button class="" name="insert"> 登録 </button>
-                    </form>
-                    <div>
-                        <a href="javascript:history.back()" role="button"
-                        class="">戻る</a>
+                        <hr>
+                        <div class="create">
+                            <label>報告書内容:</label>
+                            <p class="margin-left-20"><?php echo nl2br($_SESSION['body']) ?></p>
+                        </div>
+                    
+                        <hr>
+                        <?php if($uploaded) : ?>
+                            <?php for($i = 0; $i < count($_FILES["attachment"]["name"]); $i++ ) :?>
+                                <div>
+                                    <div class="attachment-title margin-btm-10">ファイル名：<?php echo $_FILES["attachment"]["name"][$i] ?></div>
+                                    <a class="margin-left-20" href="<?php echo '../storage/attachment/tmp/'.$_FILES["attachment"]["newName"][$i] ?>" target="_blank">アップロードファイルを表示</a>
+                                    <button class="js-attachment-delete" name="delete" value="<?php echo $_FILES["attachment"]["newName"][$i] ?>"> <?php echo $_FILES["attachment"]["name"][$i] ?>を削除</button>
+                                </div>
+                                <br>
+                            <?php endfor; ?>
+                        <?php endif; ?>
+                        <br>
+                            
+                        <div class="create block-left">
+                            <label>報告者:</label>
+                            <p class="margin-left-20"><?php echo $_SESSION['name'] ?></p>
+                        </div>
                     </div>
-        </section>
-        </div>
+                </div>  
+            </section>
+        </main>
+
+        <footer class="site-footer footer-btn">
+            <div class="">
+                <form action="createFinish.php" method="POST">
+                    <button class="" name="insert"> 登録 </button>
+                </form>
+            </div>
+            <div class="">
+                <a href="javascript:history.back()" role="button"
+                class="">戻る</a>
+            </div>
+        </footer>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $(function () {

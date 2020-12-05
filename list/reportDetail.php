@@ -41,60 +41,64 @@
 ?>
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-        <section>
-            <div class="">
-                <h1 class="">
+            <section>
+                <h1>
                     Report Detail
                 </h1>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <h2 class="">報告書</h2>
-            <div class="">
-                <div class=""></div>
-                <label class="">登録日時:</label>
-                <p class=""><?php echo date('Y/m/d H:i', strtotime($selectDetailResult['created_at'])) ?></p>
-            </div>
+            <section class="center">
+                <h2 class="margin-btm-10">報告書</h2>
+            </section>
 
-            <div class="">
-                <label class="">報告書タイトル:</label>
-                <p class=""><?php echo $selectDetailResult['title'] ?></p>
-            </div>
-
-            <hr class="">
-            <div class="">
-                <label class="">報告書内容:</label>
-                <p class=""><?php echo nl2br($selectDetailResult['body']) ?></p>
-            </div>
-
-            <hr class="">
-            <?php if($selectAttachmentResult) : ?>
-                <?php foreach($selectAttachmentResult as $attachment) :?>
-                    <form action="download" method="POST">
-                    <div class="">
-                        <div class="">ファイル名：<?php echo $attachment["file_name"] ?></div>
-                        <a class="" href="<?php echo $attachment["file_path"] ?>" target="_blank">添付ファイルを表示</a>
-                        <div><a class="" role="button" href="<?php echo $attachment['file_path'] ?>" download="<?php echo $attachment["file_name"] ?>"><?php echo $attachment["file_name"] ?>をダウンロード</a></div>
+            <section>
+                <div class="center">
+                    <div class"confirm">
+                        <div class="create block-left">
+                            <label>登録日時:</label>
+                            <p class="margin-left-20"><?php echo date('Y/m/d H:i', strtotime($selectDetailResult['created_at'])) ?></p>
+                        </div>
+                        
+                        <div class="create">
+                            <label>報告書タイトル:</label>
+                            <p class="margin-left-20 confirm-title"><?php echo $selectDetailResult['title'] ?></p>
+                        </div>
+                    
+                        <hr>
+                        <div class="create">
+                            <label>報告書内容:</label>
+                            <p class="margin-left-20"><?php echo nl2br($selectDetailResult['body']) ?></p>
+                        </div>
+                    
+                        <hr>
+                        <?php if($selectAttachmentResult) : ?>
+                            <?php foreach($selectAttachmentResult as $attachment) :?>
+                                <form action="download" method="POST">
+                                    <div>
+                                        <div class="attachment-title margin-btm-10">ファイル名：<?php echo $attachment["file_name"] ?></div>
+                                        <a class="margin-left-20" href="<?php echo $attachment["file_path"] ?>" target="_blank">添付ファイルを表示</a>
+                                        <a role="button" href="<?php echo $attachment['file_path'] ?>" download="<?php echo $attachment["file_name"] ?>"><?php echo $attachment["file_name"] ?>をダウンロード</a>
+                                    </div>
+                                    <br>
+                                </form>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <br>
+                            
+                        <div class="create block-left">
+                            <label>報告者:</label>
+                            <p class="margin-left-20"><?php echo $selectDetailResult['user_name'] ?></p>
+                        </div>
                     </div>
-                    <br>
-                    </form>
-                <?php endforeach; ?>
-            <?php endif; ?>
-            <br>
+                </div>
+            </section>
+        </main>
 
-            <div class="">
-                <div class=""></div>
-                <label class="">報告者:</label>
-                <p class=""><?php echo $selectDetailResult['user_name'] ?></p>
-            </div>
-        </section>
-
-        <section>
+        <footer class="site-footer footer-btn">
             <div class="">
                 <a href="#" onClick="window.close();" role="button" class="">Close</a>
             </div>
-        </section>
-        </div>
+            <div></div>
+        </footer>
     </body>
 </html>

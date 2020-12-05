@@ -73,30 +73,31 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-        <section>
-            <div class="">
+            <section>
                 <h1 class="">
                     Create Finish
                 </h1>
-            </div>
-            <nav aria-label="breadcrumb" class="">
-                <ol class="">
-                    <li class="" aria-current="page">Create</li>
-                    <li class="" aria-current="page">Confirm</li>
-                    <li class="" aria-current="page">Finish</li>
-                </ol>
-            </nav>
-        </section>
+                <nav aria-label="breadcrumb" class="">
+                    <nl class="breadcrumb">
+                        <li class="breadcrumb-item">Create</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item">Confirm</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item-current">Finish</li>
+                    </nl>
+                </nav>
+            </section>
 
-        <section>
-            <div class="">
-                報告書の登録が完了しました。
+            <div class="center finish">
+                <div class="margin-btm-10">
+                    <h2>
+                        報告書の登録が完了しました。
+                    </h2>
+                </div>
+                <div class="">
+                    <a class="" href="/phpReportTask">TOPへ戻る</a>
+                </div>
             </div>
-        
-            <div class="">
-                <a class="" href="/phpReportTask">TOPへ戻る</a>
-            </div>
-        </section>
-        </div>
+        </main>
     </body>
 </html>

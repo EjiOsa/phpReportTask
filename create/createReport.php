@@ -17,48 +17,56 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-        <section>
-            <div class="">
-                <h1 class="">
+            <section>
+                <h1>
                     Create Report
                 </h1>
-            </div>
-            <h2><?php echo $errorMassage; ?></h2>
-            <nav aria-label="breadcrumb" class="">
-                <ol class="">
-                    <li class="" aria-current="page">Create</li>
-                    <li class="" aria-current="page">Confirm</li>
-                    <li class="" aria-current="page">Finish</li>
-                </ol>
-            </nav>
-        </section>
+                <h2><?php echo $errorMassage; ?></h2>
+                <nav aria-label="breadcrumb">
+                    <nl class="breadcrumb">
+                        <li class="breadcrumb-item-current">Create</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item">Confirm</li>
+                            <i class="fas fa-angle-double-right"></i>
+                        <li class="breadcrumb-item">Finish</li>
+                    </nl>
+                </nav>
+            </section>
 
-        <section>
-            <!-- 入力フォームエリア -->
-            <h2 class="">報告書作成</h2>
-            <form action="confirmReport" method="POST" enctype="multipart/form-data">
-                <div class="">
-                    <label class="">報告書タイトル</label>
-                    <input id="input-title" class="" type="text" name="title" maxlength="50">
-                </div>
-                <div class="">
-                    <label class="">報告内容</label>
-                    <textarea id="input-body" class="" rows="10" name="body" maxlength="2500"></textarea>
-                </div>
-                <!-- ファイル選択部分 -->
-                <div class="">
-                    <label class="">添付（複数可）</label>
-                    <input type="hidden" name="max_file_size" value="5000000" />
-                    <input type="file" id="file" name="attachment[]" class="form-control-file" multiple>
-                </div>
-                <button id="confirm-btn" class="" name="confirm" <?php if(!isset($_SESSION["confirm"])){echo 'disabled="true"';} ?> >確認</button>
-            </form>
-            <input id="savedata" type="hidden" name="max_file_size" value="" />
-            <form action="/phpReportTask" method="GET">
+            <section class="center">
+                <h2 class="margin-btm-10">報告書作成</h2>
+            </section>
+
+            <section><!-- 入力フォームエリア -->
+                <form id="create-form" action="confirmReport" method="POST" enctype="multipart/form-data">
+                        <div class="center">
+                            <div>
+                                <div class="create">
+                                    <label class="">報告書タイトル:</label>
+                                    <input id="input-title" class="margin-btm-10 margin-left-20" type="text" name="title" maxlength="50" size="40">
+                                </div>
+                                <div class="create">
+                                    <label class="">報告内容:</label>
+                                    <textarea id="input-body" class="margin-btm-10 margin-left-20" rows="15" cols="60" name="body" maxlength="2500"></textarea>
+                                </div>
+                                <div class="create">
+                                    <label class="">添付（複数可）</label><!-- ファイル選択部分 -->
+                                    <input type="hidden" name="max_file_size" value="5000000" />
+                                    <input type="file" id="file" name="attachment[]" class="margin-left-20" multiple>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </section>
+        </main>
+        
+        <footer class="site-footer footer-btn">
+            <button id="confirm-btn" form="create-form" class="" name="confirm" <?php if(!isset($_SESSION["confirm"])){echo 'disabled="true"';} ?> >確認</button>
+            <form action="/phpReportTask" method="GET" class="">
                 <button class="">戻る</button>
             </form>
-        </section>
-        </div>
+        </footer>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             // 報告書タイトルと報告内容の入力チェック

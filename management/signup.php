@@ -6,22 +6,22 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-            <div class="center-login">
+            <div class="center login">
                 <section class="">
                     <h1>新規会員登録</h1>
                 </section>
 
                 <section class="manage-form">
                     <form action="register.php" method="post">
-                        <div class="manage-input">
+                        <div class="margin-btm-10">
                             <label>名前：<label>
                             <input type="text" name="name" required>
                         </div>
-                        <div class="manage-input">
+                        <div class="margin-btm-10">
                             <label>メールアドレス：<label>
                             <input type="text" name="email" size="28" required>
                         </div>
-                        <div class="manage-input">
+                        <div class="margin-btm-10">
                             <label>パスワード：<label>
                             <input type="password" name="pass" size="25" required>
                         </div>
@@ -31,6 +31,6 @@
                     </form>
                 </section>
             </div>
-        </div>
+        </main>
     </body>
 </html>

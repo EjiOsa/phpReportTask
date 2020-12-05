@@ -1,24 +1,66 @@
 @charset "UTF-8";
 /* タグ全体の設定 */
+body{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 86px;
+    box-sizing: border-box;
+}
+main {
+    flex: 1;
+    }
 h1{
     color:gray;
 }
 button{
     cursor: pointer; 
     cursor: hand;
+    border-radius : 4px;
+    border: 1px solid black; 
 }
 a{
     text-decoration: none;
     color:black;
     background-color:#F0F0F0;
     padding: 8px;
-    border-radius : 6%;
+    border-radius : 4px;
     border: 1px solid black;  
     }
+footer{
+    position: absolute;
+    bottom: 0;
+}
 
+/* 汎用設定 */
 .container{
-    padding: 66px 0px 20px 20px;
+    padding: 66px 20px 0px 20px;
     }
+.center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.top{
+    height: 70vh;
+}
+.login{
+    height: 40vh;
+}
+.finish{
+    height: 30vh;
+}
+.margin-btm-10{
+    margin-bottom: 10px;
+}
+.margin-left-20{
+    margin-left: 20px;
+}
+.margin-left-80rev{
+    margin-left: -80px;
+}
+
     
 /* ナビゲーションメニュー */
 .site-header{
@@ -56,29 +98,14 @@ a{
     font-weight: bold;
     }
 
-.center{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
+/* TOP画面 */
 .top-btn-flex{
     margin-top: 20px;
     width: 18%;
     display: flex;
     justify-content: space-between;
 }
-
-.center-login{
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
+/* management関連画面 */
 .manage-form{
     margin-top: 20px;
     width: 50%;
@@ -86,11 +113,115 @@ a{
     display: flex;
     justify-content: center;
 }
-
-.manage-input{
-    margin-bottom: 10px;
-}
-
 .manage-btn{
     margin-left:300px;
 }
+
+/* create関連のbreadcrumb設定 */
+.breadcrumb{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+.breadcrumb-item-current{
+    font-size:18px;
+    color:rgb(3, 5, 116);
+    font-weight: bold;
+}
+.breadcrumb-item{
+    font-size:15px;
+    color:rgb(105, 105, 109);
+    font-weight: bold;
+}
+
+/* create・detail関連の設定 */
+.create{
+    display: flex;
+    flex-direction: column;
+}
+.create label ,.attachment-title{
+    font-size:18px;
+    font-weight: bold;
+}
+.confirm{
+    width:60vw;
+}
+.confirm-title{
+    font-size:25px;
+    font-weight: bold;
+}
+.block-left{
+    margin-left:52vw;
+}
+
+/* 絞り込みエリアの設定 */
+.search-area{
+    margin:10px 40px 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.search-btn{
+    font-size:20px;
+}
+.search-btn button{
+    padding: 3px 13px;
+    margin-left:250px;
+}
+.clear-btn{
+    width: 110px;
+    font-size:20px;
+    margin-bottom: 4px;
+}
+
+/* tableの設定 */
+.report_table *, .report_table *:before, .report_table *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.report_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.report_table th {
+	width: 13%;
+	background: #f4f4f4;
+	padding: 10px;
+	border: 1px solid #dddddd;
+}
+.report_table td {
+	text-align: left;
+	vertical-align: top;
+	padding: 10px;
+	border: 1px solid #dddddd;
+}
+.report_table td:first-child {
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.report_table td:nth-child(n+3){
+    text-align: center;
+}
+.zero-str{
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* footerの設定 */
+.site-footer{
+    width: 100%;
+    height: 86px;
+    padding: 5px 200px 40px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+}
+.footer-btn{
+    font-size:20px;
+}
+

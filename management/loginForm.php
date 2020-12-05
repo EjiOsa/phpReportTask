@@ -13,7 +13,7 @@
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
 
-            <div class="center-login">
+            <div class="center login">
                 <section class="">
                     <h1>ログイン</h1>
                     <h3><?php echo $errorMassage; ?></h3>
@@ -21,11 +21,11 @@
 
                 <section class="manage-form">
                     <form action="login.php" method="post">
-                        <div class="manage-input">
+                        <div class="margin-btm-10">
                             <label>メールアドレス：<label>
                             <input type="text" name="email" size="28" required>
                         </div>
-                        <div class="manage-input">
+                        <div class="margin-btm-10">
                             <label>パスワード：<label>
                             <input type="password" name="password" required>
                         </div>
@@ -35,6 +35,6 @@
                     </form>
                 </section>
             </div>
-        </div>
+        </main>
     </body>
 </html>

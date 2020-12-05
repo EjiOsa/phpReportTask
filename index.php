@@ -12,26 +12,26 @@
 ?>
 <?php include(dirname(__FILE__).'/assets/_inc/header.php'); ?>
 
-        <div class="center">
-            <section class="">
-                <h1 class="index">
-                    Report Create&View TOP
-                </h1>
-            </section>
+            <div class="center top">
+                <section class="">
+                    <h1 class="index">
+                        Report Create&View TOP
+                    </h1>
+                </section>
 
-            <section class="top-btn-flex">
-                <div class="create-report">
-                    <form action="create/createReport.php" method="GET">
-                        <button class=""> Create Report </button>
-                    </form>
-                </div>
-                <div class="report-list">
-                    <form action="list/reportList.php" method="GET">
-                        <button class="">Report List</button>
-                    </form>
-                </div>
-            </section>
+                <section class="top-btn-flex">
+                    <div class="create-report">
+                        <form action="create/createReport.php" method="GET">
+                            <button class=""> Create Report </button>
+                        </form>
+                    </div>
+                    <div class="report-list">
+                        <form action="list/reportList.php" method="GET">
+                            <button class="">Report List</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../phpReportTask/css/reset.css">
     <link rel="stylesheet" href="../../../phpReportTask/css/original.css">
+    <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
     <title><?php echo TITLE; ?></title>
 </head>
 
@@ -43,4 +44,4 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <main class="container">

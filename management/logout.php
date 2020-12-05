@@ -10,10 +10,12 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-            <div class="center-login">
-                <h1>ログアウトしました。</h1>
-                <a href="/phpReportTask">TOPへ</a>
+            <div class="center login">
+                <h2 class="margin-btm-10">ログアウトしました。</h2>
+                <div>
+                    <a href="/phpReportTask">TOPへ</a>
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>

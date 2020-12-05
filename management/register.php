@@ -44,10 +44,12 @@
 
 <?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
 
-            <div class="center-login">
-                <h1><?php echo $msg; ?></h1>
-                <?php echo $link; ?>
+            <div class="center login">
+                <h2  class="margin-btm-10"><?php echo $msg; ?></h2>
+                <div>
+                    <?php echo $link; ?>
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
