@@ -16,7 +16,7 @@
         $confirmUserStmt->bindValue(':email', $email);
         $confirmUserStmt->execute();
         $user = $confirmUserStmt->fetch();
-        if ($user['mail'] === $mail) {
+        if ($user['email'] === $email) {
             $msg = '同じメールアドレスが存在します。';
             $link = '<a href="signup.php">戻る</a>';
         } else {
@@ -27,7 +27,7 @@
                                     :name, :email, :password,'$date','$date')";
             $userInsertStmt = $dbh->prepare($userInsertSql);
             $userInsertStmt->bindValue(':name', $name);
-            $userInsertStmt->bindValue(':email', $mail);
+            $userInsertStmt->bindValue(':email', $email);
             $userInsertStmt->bindValue(':password', $pass);
             $userInsertStmt->execute();
             $msg = '会員登録が完了しました';
