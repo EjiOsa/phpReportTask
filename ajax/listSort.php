@@ -9,11 +9,7 @@
     }
     $order = $_POST['order'];
     
-    // PDO用の定数と変数宣言
-    define('DB_DSN', 'mysql:dbname=report_project;host=localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'root');
-    $options = array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET 'utf8'");
+    include(dirname(__FILE__).'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定
