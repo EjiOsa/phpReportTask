@@ -135,7 +135,7 @@
                 searchTitle = $('#search-title-input').val();
                 searchBody = $('#search-body-input').val();
                 $.ajax({
-                    url: '../ajax/listSearch',
+                    url: '../ajax/listSearch.php',
                     type: 'POST',
                     data: {
                         'searchTitle': searchTitle,
@@ -206,7 +206,7 @@
                 const targetId = $('#sort-'+sortId+'-id');
 
                 $.ajax({
-                    url: '../ajax/listSort',
+                    url: '../ajax/listSort.php',
                     type: 'POST',
                     data: {
                         'searchTitle': searchTitle,
