@@ -38,7 +38,7 @@
             </section>
 
             <section><!-- 入力フォームエリア -->
-                <form id="create-form" action="confirmReport" method="POST" enctype="multipart/form-data">
+                <form id="create-form" action="confirmReport.php" method="POST" enctype="multipart/form-data">
                         <div class="center">
                             <div>
                                 <div class="create">
