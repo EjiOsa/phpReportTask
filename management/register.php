@@ -31,7 +31,7 @@
             $userInsertStmt->bindValue(':password', $pass);
             $userInsertStmt->execute();
             $msg = '会員登録が完了しました';
-            $link = '<a href="login.php">ログインページ</a>';
+            $link = '<a href="loginForm.php">ログインページ</a>';
         }
     } catch (PDOException $e) {
         $msg = $e->getMessage();
