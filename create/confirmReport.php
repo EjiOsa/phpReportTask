@@ -127,7 +127,7 @@
                         var $this = $(this);
                         attachmentName = $this.attr('value');
                         $.ajax({
-                            url: '../ajax/delAttachment',
+                            url: '../ajax/delAttachment.php',
                             type: 'POST',
                             data: {
                                 'attachmentName': attachmentName
