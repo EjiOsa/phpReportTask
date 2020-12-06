@@ -11,8 +11,10 @@
     $name = $_SESSION["name"];
     $attachmentFlg = 0;
     if (isset($_SESSION["attachments"])){
-        // 添付ファイルの有無Flag
-        $attachmentFlg = 1;
+        if($_SESSION["attachments"]){
+            // 添付ファイルの有無Flag
+            $attachmentFlg = 1;
+        }
     }
 
     include(dirname(__FILE__).'/../assets/_inc/const.php');
