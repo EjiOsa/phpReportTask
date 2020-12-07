@@ -4,6 +4,7 @@
     if(isset($_SESSION["login_message"])){
         $errorMassage = $_SESSION["login_message"];
     }
+    //未ログインのリダイレクト処理
     if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){
         $_SESSION['login_message'] = "報告書作成はログインが必要です。<br>";
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm.php');

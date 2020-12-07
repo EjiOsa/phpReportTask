@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['confirm'] = true;
+    //報告書未作成時のリダイレクト処理
     if((!isset($_POST['title']) || !isset($_POST['body']))
         || (!($_POST['title']) || !($_POST['body'])) ){
         $_SESSION['login_message'] = "報告書作成画面から開始してください。<br>";
@@ -14,6 +15,7 @@
     unset($_SESSION["attachments"]);
     unset($_SESSION["login_message"]);
 
+    // 添付ファイルをユニーク名にして、一時保管
     if(isset($_FILES["attachment"]["name"])){
         for($i = 0; $i < count($_FILES["attachment"]["name"]); $i++ ){
             if(is_uploaded_file($_FILES["attachment"]["tmp_name"][$i])){

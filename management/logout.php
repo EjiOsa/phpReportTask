@@ -1,7 +1,8 @@
 <?php
     session_start();
-    $_SESSION = array();//セッションの中身をすべて削除
-    session_destroy();//セッションを破壊
+    // セッション削除と破壊
+    $_SESSION = array();
+    session_destroy();
     
     // 以下、header内で使用する定数
     const TITLE = "LogOut";

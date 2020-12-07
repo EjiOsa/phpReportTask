@@ -1,6 +1,6 @@
 <?php
-    // 登録用データ
     session_start();
+    // 報告書未作成時のリダイレクト処理
     if(!isset($_SESSION['title']) || !isset($_SESSION['body'])){
         $_SESSION['login_message'] = "報告書作成画面から開始してください。<br>";
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
