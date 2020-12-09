@@ -6,8 +6,12 @@
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/management/loginForm.php');
         exit();
     }
+    //エスケープ処理
+    function h($s) {
+        return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+    }
 
-    include(dirname(__FILE__).'/../assets/_inc/const.php');
+    include(__DIR__.'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定
@@ -29,7 +33,7 @@
     $path = "..";
     ?>
 
-<?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
+<?php include(__DIR__.'/../assets/_inc/header.php'); ?>
 
             <section>
                 <h1>
@@ -91,14 +95,14 @@
                         <tbody id="report-list">
                             <?php foreach($selectReportResult as $report) :?>
                             <tr>
-                                <td><?php echo $report['title'] ?></td>
+                                <td><?php echo h($report['title']) ?></td>
                                 <td><?php if(mb_strlen($report['body']) > 100) { 
-                                                $body = mb_substr($report['body'],0,100);
+                                                $body = mb_substr(h($report['body']),0,100);
                                                 echo nl2br($body. '...');
                                             } else {
-                                                echo $report['body'];
+                                                echo h($report['body']);
                                             } ?></td>
-                                <td><?php echo $report['user_name'] ?></td>
+                                <td><?php echo h($report['user_name']) ?></td>
                                 <td><?php echo date('Y/m/d H:i', strtotime($report['created_at'])) ?></td>
                                 <td>
                                     <?php if($report['attachment_flg']): ?>

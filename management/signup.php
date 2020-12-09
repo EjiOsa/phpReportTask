@@ -4,7 +4,7 @@
     const NOT_SHOW_AUTH = "SignUp";
     ?>
 
-<?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
+<?php include(__DIR__.'/../assets/_inc/header.php'); ?>
 
             <div class="center login">
                 <section class="">

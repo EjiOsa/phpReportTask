@@ -9,7 +9,7 @@
     }
     $order = $_POST['order'];
     
-    include(dirname(__FILE__).'/../assets/_inc/const.php');
+    include(__DIR__.'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定

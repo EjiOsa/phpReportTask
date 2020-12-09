@@ -7,8 +7,12 @@
         exit();
     }
     $id = $_GET["detail"];
+    //エスケープ処理
+    function h($s) {
+        return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+    }
 
-    include(dirname(__FILE__).'/../assets/_inc/const.php');
+    include(__DIR__.'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定
@@ -40,7 +44,7 @@
     const NOT_SHOW_AUTH = "Detail";
     $path = "..";
 ?>
-<?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
+<?php include(__DIR__.'/../assets/_inc/header.php'); ?>
 
             <section>
                 <h1>
@@ -62,13 +66,13 @@
                         
                         <div class="create">
                             <label>報告書タイトル:</label>
-                            <p class="margin-left-20 confirm-title"><?php echo $selectDetailResult['title'] ?></p>
+                            <p class="margin-left-20 confirm-title"><?php echo h($selectDetailResult['title']) ?></p>
                         </div>
                     
                         <hr>
                         <div class="create">
                             <label>報告書内容:</label>
-                            <p class="margin-left-20"><?php echo nl2br($selectDetailResult['body']) ?></p>
+                            <p class="margin-left-20"><?php echo nl2br(h($selectDetailResult['body'])) ?></p>
                         </div>
                     
                         <hr>
@@ -76,9 +80,9 @@
                             <?php foreach($selectAttachmentResult as $attachment) :?>
                                 <form action="download" method="POST">
                                     <div>
-                                        <div class="attachment-title margin-btm-10">ファイル名：<?php echo $attachment["file_name"] ?></div>
+                                        <div class="attachment-title margin-btm-10">ファイル名：<?php echo h($attachment["file_name"]) ?></div>
                                         <a class="margin-left-20" href="<?php echo $attachment["file_path"] ?>" target="_blank">添付ファイルを表示</a>
-                                        <a role="button" href="<?php echo $attachment['file_path'] ?>" download="<?php echo $attachment["file_name"] ?>"><?php echo $attachment["file_name"] ?>をダウンロード</a>
+                                        <a role="button" href="<?php echo $attachment['file_path'] ?>" download="<?php echo $attachment["file_name"] ?>"><?php echo h($attachment["file_name"]) ?>をダウンロード</a>
                                     </div>
                                     <br>
                                 </form>
@@ -88,7 +92,7 @@
                             
                         <div class="create block-left">
                             <label>報告者:</label>
-                            <p class="margin-left-20"><?php echo $selectDetailResult['user_name'] ?></p>
+                            <p class="margin-left-20"><?php echo h($selectDetailResult['user_name']) ?></p>
                         </div>
                     </div>
                 </div>

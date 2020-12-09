@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-    include(dirname(__FILE__).'/../assets/_inc/const.php');
+    include(__DIR__.'/../assets/_inc/const.php');
     try {
         $dbh = new PDO(DB_DSN,DB_USER, DB_PASSWORD, $options);
         // SQLエラーの表示設定
@@ -42,7 +42,7 @@
     const NOT_SHOW_AUTH = "Register";
     ?>
 
-<?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
+<?php include(__DIR__.'/../assets/_inc/header.php'); ?>
 
             <div class="center login">
                 <h2  class="margin-btm-10"><?php echo $msg; ?></h2>

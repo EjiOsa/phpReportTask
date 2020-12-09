@@ -8,6 +8,22 @@
         header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
         exit();
     }
+    //サーバー側でのバリデーションチェック
+    if(mb_strlen($_POST['title'])<=0 || mb_strlen($_POST['title'])>50){
+        $_SESSION['login_message'] = "タイトルの文字数が不正です。報告書作成画面から開始してください。<br>";
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
+        exit();
+    }
+    if(mb_strlen($_POST['body'])<=0 || mb_strlen($_POST['body'])>2500){
+        $_SESSION['login_message'] = "報告書内容の文字数が不正です。報告書作成画面から開始してください。<br>";
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/phpReportTask/create/createReport.php');
+        exit();
+    }
+    //エスケープ処理
+    function h($s) {
+        return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+    }
+
     $_SESSION['title'] = $_POST['title'];
     $_SESSION['body'] = $_POST['body'];
     $uploaded = false;
@@ -44,7 +60,7 @@
     $path = "..";
     ?>
 
-<?php include(dirname(__FILE__).'/../assets/_inc/header.php'); ?>
+<?php include(__DIR__.'/../assets/_inc/header.php'); ?>
 
             <section>
                 <h1>
@@ -70,22 +86,22 @@
                     <div class="confirm">
                         <div class="create">
                             <label>報告書タイトル:</label>
-                            <p class="margin-left-20 confirm-title"><?php echo $_SESSION['title'] ?></p>
+                            <p class="margin-left-20 confirm-title"><?php echo h($_SESSION['title']) ?></p>
                         </div>
                     
                         <hr>
                         <div class="create">
                             <label>報告書内容:</label>
-                            <p class="margin-left-20"><?php echo nl2br($_SESSION['body']) ?></p>
+                            <p class="margin-left-20"><?php echo nl2br(h($_SESSION['body'])) ?></p>
                         </div>
                     
                         <hr>
                         <?php if($uploaded) : ?>
                             <?php for($i = 0; $i < count($_FILES["attachment"]["name"]); $i++ ) :?>
                                 <div>
-                                    <div class="attachment-title margin-btm-10">ファイル名：<?php echo $_FILES["attachment"]["name"][$i] ?></div>
+                                    <div class="attachment-title margin-btm-10">ファイル名：<?php echo h($_FILES["attachment"]["name"][$i]) ?></div>
                                     <a class="margin-left-20" href="<?php echo '../storage/attachment/tmp/'.$_FILES["attachment"]["newName"][$i] ?>" target="_blank">アップロードファイルを表示</a>
-                                    <button class="js-attachment-delete" name="delete" value="<?php echo $_FILES["attachment"]["newName"][$i] ?>"> <?php echo $_FILES["attachment"]["name"][$i] ?>を削除</button>
+                                    <button class="js-attachment-delete" name="delete" value="<?php echo $_FILES["attachment"]["newName"][$i] ?>"> <?php echo h($_FILES["attachment"]["name"][$i]) ?>を削除</button>
                                 </div>
                                 <br>
                             <?php endfor; ?>
@@ -94,7 +110,7 @@
                             
                         <div class="create block-left">
                             <label>報告者:</label>
-                            <p class="margin-left-20"><?php echo $_SESSION['name'] ?></p>
+                            <p class="margin-left-20"><?php echo h($_SESSION['name']) ?></p>
                         </div>
                     </div>
                 </div>  
